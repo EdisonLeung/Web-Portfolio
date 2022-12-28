@@ -1,4 +1,6 @@
-import React from "react";
+import { GoogleMap, useLoadScript, Polyline } from "@react-google-maps/api";
+import React, { useState } from "react";
+import { UW_LATITUDE_CENTER, UW_LONGITUDE_CENTER } from "./Constants";
 
 const CampusMap = () => {
   return (
@@ -10,18 +12,56 @@ const CampusMap = () => {
 };
 
 const Body = () => {
-  return ( 
-    <div id="map">
-      <MapContainer center={position} zoom={15} scrollWheelZoom={true}>
-        <TileLayer
-          attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors"
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {[this.renderLines(), this.renderMarkers()]}
-      </MapContainer>
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyBtHBT3bCfcUT9IYSmH-AujtdTjxKdIxWo",
+  });
+
+  if (!isLoaded) return <div>Loading...</div>;
+  return <Map />;
+};
+
+function Map() {
+  const startPoint = { lat: 37.772, lng: -122.214 };
+  const endPoint = { lat: 21.291, lng: -157.821 };
+  const center = {lat: UW_LATITUDE_CENTER, lng: UW_LONGITUDE_CENTER}
+
+  const [buildings, setBuildings] = useState([])
+  async function initializeBuildingList() {
+    const buildingMap = [];
+    try {
+        let responsePromise = fetch("http://localhost:4567/buildings");
+        let response = await responsePromise;
+
+        let building = (await response.json());
+        for (let shortName in building) {
+            buildingMap.push({shortName:shortName, longName: building[shortName]})
+        }
+    } catch (e) {
+        alert("Unable to retrieve buildings");
+        console.log(e);
+    }
+    setBuildings(buildingMap)
+}
+  return (
+    <div>
+      <div id="map">
+        
+        <GoogleMap zoom={15}  center={center} mapContainerClassName="map-container">
+        <Polyline
+        path={[startPoint, endPoint]}
+        options={{
+          strokeColor: '#ff2527',
+          strokeOpacity: 0.75,
+          strokeWeight: 2,
+        }}
+      />
+        {buildings.toString()}
+        </GoogleMap>
+      </div>
     </div>
   );
-};
+}
+
 const Header = () => {
   return (
     <React.Fragment>

@@ -802,6 +802,9 @@ properly.
 	text-align: center !important;
 }
 
-
+.map-container {
+   width: 100%;
+   height: 80vh;
+}
 
 

@@ -916,3 +916,11 @@ footer .social-links li:first-child { margin-left: 0; }
 }
 #go-top a:hover { background-color: #0F9095; }
 
+#map {
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 60px;
+   margin-bottom: 20px;    
+   width: 800px;
+}
+
