@@ -1,6 +1,14 @@
-import { GoogleMap, useLoadScript, Polyline } from "@react-google-maps/api";
-import React, { useState } from "react";
+import {
+  GoogleMap,
+  useLoadScript,
+  Polyline,
+  Marker,
+} from "@react-google-maps/api";
+import React, { useEffect, useState } from "react";
 import { UW_LATITUDE_CENTER, UW_LONGITUDE_CENTER } from "./Constants";
+
+import Select from "react-select";
+import { initializeBuildingList, makeRequestRoute } from "./ServerRequests";
 
 const CampusMap = () => {
   return (
@@ -13,50 +21,83 @@ const CampusMap = () => {
 
 const Body = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBtHBT3bCfcUT9IYSmH-AujtdTjxKdIxWo",
+    googleMapsApiKey: process.env.REACT_APP_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
   return <Map />;
 };
 
+
 function Map() {
-  const startPoint = { lat: 37.772, lng: -122.214 };
-  const endPoint = { lat: 21.291, lng: -157.821 };
-  const center = {lat: UW_LATITUDE_CENTER, lng: UW_LONGITUDE_CENTER}
+  const center = { lat: UW_LATITUDE_CENTER, lng: UW_LONGITUDE_CENTER };
+  const [lines, setLines] = useState([]);
 
-  const [buildings, setBuildings] = useState([])
-  async function initializeBuildingList() {
-    const buildingMap = [];
-    try {
-        let responsePromise = fetch("http://localhost:4567/buildings");
-        let response = await responsePromise;
+  const [buildings, setBuildings] = useState([]);
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
 
-        let building = (await response.json());
-        for (let shortName in building) {
-            buildingMap.push({shortName:shortName, longName: building[shortName]})
-        }
-    } catch (e) {
-        alert("Unable to retrieve buildings");
-        console.log(e);
-    }
-    setBuildings(buildingMap)
-}
+  useEffect(() => {
+    initializeBuildingList(setBuildings);
+  }, []);
+
   return (
     <div>
-      <div id="map">
-        
-        <GoogleMap zoom={15}  center={center} mapContainerClassName="map-container">
-        <Polyline
-        path={[startPoint, endPoint]}
-        options={{
-          strokeColor: '#ff2527',
-          strokeOpacity: 0.75,
-          strokeWeight: 2,
-        }}
-      />
-        {buildings.toString()}
+      <div id="map" className="map row">
+        <div className="map column left"></div>
+        <GoogleMap
+          zoom={16}
+          center={center}
+          mapContainerClassName="map column middle"
+        >
+          {lines.map((line, index) => (
+            <Polyline
+              key={index}
+              path={[line.startPoint, line.endPoint]}
+              options={{
+                strokeColor: "#ff2527",
+                strokeOpacity: 0.75,
+                strokeWeight: 2,
+              }}
+            />
+          ))}
+          {start !== "" && <Marker position={center}></Marker>}
+          {end !== "" && <Marker position={center}></Marker>}
         </GoogleMap>
+
+        <div className="map column right">
+          <form onsubmit="event.preventDefault();" role="search">
+            <Select
+              id="search"
+              placeholder="Search Start Building..."
+              options={buildings.map((opt) => ({
+                label: opt.longName + " - " + opt.shortName,
+                value: opt.shortName,
+              }))}
+              onChange={(opt) => {
+                setStart(opt.value);
+                if (end !== "") makeRequestRoute(opt.value, end, setLines);
+              }}
+              required
+            />
+          </form>
+
+          <form onsubmit="event.preventDefault();" role="search">
+            <Select
+              id="search"
+              placeholder="Search Destination Building..."
+              options={buildings.map((opt) => ({
+                label: opt.longName + " - " + opt.shortName,
+                value: opt.shortName,
+              }))}
+              onChange={(opt) => {
+                setEnd(opt.value);
+                if (start !== "") makeRequestRoute(start, opt.value, setLines);
+              }}
+              required
+            />
+          </form>
+        </div>
       </div>
     </div>
   );
