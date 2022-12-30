@@ -88,7 +88,7 @@ export default class Resume extends Component {
                         style={{ marginTop: "0px" }}
                       >
                         {item.Achievements.map((achievement) => {
-                          return <li>&bull; {achievement}</li>;
+                          return <li> {achievement}</li>;
                         })}
                       </ul>
                     </div>

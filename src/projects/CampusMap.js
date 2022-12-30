@@ -8,12 +8,26 @@ import React, { useEffect, useState } from "react";
 import { UW_LATITUDE_CENTER, UW_LONGITUDE_CENTER } from "./Constants";
 
 import Select from "react-select";
-import { initializeBuildingList, makeRequestRoute } from "./ServerRequests";
+import {
+  getBuildingLocation,
+  initializeBuildingList,
+  makeRequestRoute,
+} from "./ServerRequests";
 
 const CampusMap = () => {
   return (
-    <div>
-      <Header />
+    <div style={{backgroundColor:"white"}}>
+      <Header/>
+      <section className="">
+        <div style={{height: "10vh", backgroundColor: "white"}}/>
+        <div className="row">
+          <div className="ten columns">
+            UW Campus Map Path Finder
+          </div>
+        </div>
+      </section>      
+      {/* <img src="images/UW_Logo.png" alt="" className="center header-offset" style={{width: "50%"}}/> */}
+
       <Body />
     </div>
   );
@@ -28,7 +42,6 @@ const Body = () => {
   return <Map />;
 };
 
-
 function Map() {
   const center = { lat: UW_LATITUDE_CENTER, lng: UW_LONGITUDE_CENTER };
   const [lines, setLines] = useState([]);
@@ -36,6 +49,9 @@ function Map() {
   const [buildings, setBuildings] = useState([]);
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
+
+  const [startPoint, setStartPoint] = useState({});
+  const [endPoint, setEndPoint] = useState({});
 
   useEffect(() => {
     initializeBuildingList(setBuildings);
@@ -61,12 +77,32 @@ function Map() {
               }}
             />
           ))}
-          {start !== "" && <Marker position={center}></Marker>}
-          {end !== "" && <Marker position={center}></Marker>}
+          {start !== "" && (
+            <Marker
+              position={{
+                lat: parseFloat(startPoint.lat),
+                lng: parseFloat(startPoint.lng),
+              }}
+              icon={{
+                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+              }}
+            ></Marker>
+          )}
+          {end !== "" && (
+            <Marker
+              position={{
+                lat: parseFloat(endPoint.lat),
+                lng: parseFloat(endPoint.lng),
+              }}
+              icon={{
+                url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+              }}
+            ></Marker>
+          )}
         </GoogleMap>
 
         <div className="map column right">
-          <form onsubmit="event.preventDefault();" role="search">
+          <form role="search">
             <Select
               id="search"
               placeholder="Search Start Building..."
@@ -76,13 +112,14 @@ function Map() {
               }))}
               onChange={(opt) => {
                 setStart(opt.value);
+                getBuildingLocation(opt.value, setStartPoint);
                 if (end !== "") makeRequestRoute(opt.value, end, setLines);
               }}
               required
             />
           </form>
 
-          <form onsubmit="event.preventDefault();" role="search">
+          <form role="search">
             <Select
               id="search"
               placeholder="Search Destination Building..."
@@ -92,6 +129,7 @@ function Map() {
               }))}
               onChange={(opt) => {
                 setEnd(opt.value);
+                getBuildingLocation(opt.value, setEndPoint);
                 if (start !== "") makeRequestRoute(start, opt.value, setLines);
               }}
               required

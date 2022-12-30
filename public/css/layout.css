@@ -301,6 +301,12 @@ ul#nav li.current a { color: #F06000; }
    margin-bottom: 1.5rem;
 }
 
+.work ul li::before {
+   content: "▹";
+   font-size: 20px;
+    position: absolute;
+    left: 0px;
+}
 .photoshop {
   	width: 60%;
   	-moz-animation: photoshop 2s ease;
@@ -392,13 +398,15 @@ ul#nav li.current a { color: #F06000; }
    padding-bottom: 60px;
 }
 #portfolio h1 {
-   font: 15px/24px 'opensans-semibold', sans-serif;
+   font: 18px/24px 'opensans-semibold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1px;
-   text-align: center;
+   text-align: left;
    margin-bottom: 48px;
-   color: #95A3A3;
+   border-bottom: 3px solid #11ABB0;
+   padding-bottom: 6px;
 }
+
 
 /* Portfolio Content */
 #portfolio-wrapper .columns { margin-bottom: 36px; }
