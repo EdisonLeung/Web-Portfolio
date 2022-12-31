@@ -1,4 +1,5 @@
 import {
+  MAP_SCALE_FACTOR,
   UW_LATITUDE,
   UW_LATITUDE_OFFSET,
   UW_LATITUDE_SCALE,
@@ -21,7 +22,7 @@ function yToLat(y) {
 /*
 Finds shortest path from one building to another
 */
-export const makeRequestRoute = async (start, end, setLines) => {
+export const makeRequestRoute = async (start, end, setLines, setZoom, setCenter) => {
   const paths = [];
   if (start === "" || end === "initEndSelection") {
     console.log("No building selected");
@@ -38,6 +39,9 @@ export const makeRequestRoute = async (start, end, setLines) => {
       }
 
       let object = await response.json();
+
+      let sumLon = 0;
+      let sumLat = 0;
       for (let i = 0; i < object.path.length; i++) {
         let path = object.path[i];
         paths.push({
@@ -47,8 +51,16 @@ export const makeRequestRoute = async (start, end, setLines) => {
           },
           endPoint: { lat: yToLat(path.end.y), lng: xToLon(path.end.x) },
         });
+        sumLon += xToLon(path.start.x) + xToLon(path.end.x) 
+        sumLat += yToLat(path.start.y) + yToLat(path.end.y) 
+
       }
+      const distance = Math.hypot(paths[paths.length-1].endPoint.lat-paths[0].startPoint.lat, paths[paths.length-1].endPoint.lng-paths[0].startPoint.lng)
       setLines(paths);
+      setZoom(17);
+      // console.log(Math.sqrt(distance * 84463.67103358038))
+      // console.log(Math.hypot(paths[paths.length-1].endPoint.lat-paths[0].startPoint.lat, paths[paths.length-1].endPoint.lng-paths[0].startPoint.lng))
+      setCenter({lat: sumLat / (paths.length * 2), lng: sumLon / (paths.length * 2)})
     } catch (e) {
       alert("unable to render path");
       console.log(e);

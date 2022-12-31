@@ -1176,34 +1176,52 @@ properly.
   text-align: center !important;
 }
 
-.map-container {
-  /* width: 100%; */
-  height: 80vh;
-}
-
-.map.column {
+#map .column {
   float: left;
-  padding: 10px;
+  padding: 80 10px;
   height: 80vh; /* Should be removed. Only for demonstration */
 }
 
-.map.left,
-.map.right {
-  width: 10%;
-  overflow: visible;
+.center-box {
+  position: relative;
+  height: 80vh;
+  margin: auto;
 }
 
-.map.middle {
-  width: 80%;
+.overlay-box {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-/* Clear floats after the columns */
-.map.row:after {
-  content: "";
-  display: table;
-  clear: both;
+#project-read h1{
+  font-weight: bold;
+  height: auto;
+  background: linear-gradient(90deg, rgba(123,0,205,1) 0%, rgba(247,165,49,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 5%;
 }
+  
 
+#project-read h6 {
+  /* color: var(--color-dark); */
+  color: white;
+  font-weight: lighter;
+}
+.overlay-box h4 {
+  font-family: var(--font-mono);
+  font-size: larger;
+  color: var(--dark-navy);
+  background: rgb(123,0,205);
+  padding: 15px;
+  background: linear-gradient(90deg, rgba(123,0,205,1) 0%, rgba(247,165,49,1) 100%);
+  outline-width: 3px;
+  border: solid;
+  border-width: 3px;
+  border-radius: 3px;
+
+}
 /* Search Bar */
 :root {
   --rad: 0.7rem;

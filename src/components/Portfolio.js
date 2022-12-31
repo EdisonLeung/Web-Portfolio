@@ -9,7 +9,7 @@ export default class Porfolio extends Component {
         <div className="row">
           <div className="twelve columns collapsed">
             <h1>
-              <span>My Projects</span>
+              <span>Some of My Projects</span>
             </h1>
             <ul>
               {resumeData.portfolio &&
@@ -29,20 +29,22 @@ export default class Porfolio extends Component {
                             ))}
                           </ul>
                           <div className="project-links">
-                            <a
-                              href="https://github.com/EdisonLeung/Campus-Map"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <i className="fa fa-github"></i>
-                            </a>
+                            {item.gitLink !== undefined && (
+                              <a
+                                href="https://github.com/EdisonLeung/Campus-Map"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <i className="fa fa-github"></i>
+                              </a>
+                            )}
 
-                            <Link to={item.link}>
+                            <a href={item.link}>
                               <div style={{ fontSize: 15 }}>
                                 View Project &nbsp;
                               </div>
                               <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -50,9 +52,9 @@ export default class Porfolio extends Component {
                       <div className="project-image portfolio-item">
                         <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained img">
                           <div style={{ maxWidth: 700, display: "block" }}>
-                            <Link to={item.link}>
+                            <a href={item.link}>
                               <div className="item-wrap">
-                                <img src={item.thumbnail} />
+                                <img src={item.imgurl} alt="" />
                                 <div className="overlay">
                                   <div className="portfolio-item-meta">
                                     <h5>{item.name}</h5>
@@ -60,7 +62,7 @@ export default class Porfolio extends Component {
                                   </div>
                                 </div>
                               </div>
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div>

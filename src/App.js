@@ -19,7 +19,7 @@ import resumeData from './resumeData';
 const App = () => {
   let routes = useRoutes([
     { path: "/", element: <Home/> },
-    { path: "/CampusMap", element: <CampusMap /> },    
+    { path: "/CampusMap", element: <CampusMap resumeData={resumeData} /> },    
   ]);
   return routes;
 };

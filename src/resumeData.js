@@ -143,8 +143,8 @@ let resumeData = {
     {
       name: "UW Campus Map",
       description:
-        "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on",
-      imgurl: "images/portfolio/origami.jpg",
+        "An application for finding the shortest path from one building to another at the University of Washington",
+      imgurl: "images/portfolio/CampusMap.jpg",
       skills: [
         "React",
         "Typescript",
@@ -155,31 +155,15 @@ let resumeData = {
         "Java",
       ],
       link: "/CampusMap",
+      gitLink: "https://github.com/EdisonLeung/Campus-Map",
       thumbnail: "images/portfolio/CampusMap.jpg",
     },
     {
-      name: "project2",
-      description: "mobileapp",
-      imgurl: "images/portfolio/origami.jpg",
-      skills: ["VS Code", "VS Code", "VS Code", "VS Code", "VS CODO"],
-      link: "/CampusMap",
-      thumbnail: "images/portfolio/CampusMap.jpg",
-    },
-    {
-      name: "project3",
-      description: "mobileapp",
-      imgurl: "images/portfolio/origami.jpg",
-      skills: ["VS Code", "VS Code", "VS Code", "VS Code", "VS CODO"],
-      link: "/CampusMap",
-      thumbnail: "images/portfolio/CampusMap.jpg",
-    },
-    {
-      name: "project4",
-      description: "mobileapp",
-      imgurl: "images/portfolio/origami.jpg",
-      skills: ["VS Code", "VS Code", "VS Code", "VS Code", "VS CODO"],
-      link: "/CampusMap",
-      thumbnail: "images/portfolio/CampusMap.jpg",
+      name: "Imagetagger for Advanced Robotics at UW",
+      description: "An Image Annotation Tool to effectively process over 30k+ images to feed into Machine Learning Model",
+      imgurl: "images/portfolio/Imagetagger.jpg",
+      skills: ["React", "Tailwind", "PostgreSQL", "Prisma", "Git"],
+      link: "https://github.com/",
     },
   ],
   noteworthy_projects: [

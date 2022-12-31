@@ -293,6 +293,7 @@ ul#nav li.current a { color: #F06000; }
 .skills li {
    display: inline-block;
    background: rgb(18, 30, 39);
+   border-radius: 3px;
    color: rgb(255, 255, 255);
    padding: .75rem;
    font-weight: 700;
