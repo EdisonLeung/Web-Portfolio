@@ -26,7 +26,7 @@ const App = () => {
 
 const AppWrapper = () => {
   return (
-    <Router>
+    <Router basename="http://EdisonLeung.github.io/web-portfolio">
       <App />
     </Router>
   );
