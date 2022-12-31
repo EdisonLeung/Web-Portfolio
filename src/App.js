@@ -19,11 +19,10 @@ import resumeData from './resumeData';
 const App = () => {
   let routes = useRoutes([
     { path: "/", element: <Home/> },
-    { path: "/web-portfolio/CampusMap", element: <CampusMap resumeData={resumeData} /> },    
+    { path: "/CampusMap", element: <CampusMap resumeData={resumeData} /> },    
   ]);
   return routes;
 };
-
 const AppWrapper = () => {
   return (
     <Router basename="/web-portfolio">
