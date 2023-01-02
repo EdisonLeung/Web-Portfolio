@@ -26,7 +26,7 @@ const App = () => {
 };
 const AppWrapper = () => {
   return (
-    <Router basename="/">
+    <Router basename="/web-portfolio">
       <App />
     </Router>
   );
