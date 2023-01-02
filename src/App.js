@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {
   BrowserRouter as Router,
+  HashRouter,
   useRoutes,
 } from "react-router-dom";
   
@@ -25,9 +26,9 @@ const App = () => {
 };
 const AppWrapper = () => {
   return (
-    <Router basename="/web-portfolio">
+    <HashRouter basename="/web-portfolio">
       <App />
-    </Router>
+    </HashRouter>
   );
 };
 
