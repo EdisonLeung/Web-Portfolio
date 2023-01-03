@@ -3,7 +3,7 @@ let resumeData = {
   name: "Edison Leung | Software Developer",
   linkedinId: "Your LinkedIn Id",
   roleDescription:
-    "I love exploring and creating new technologies. I'm always trying to find something funny in any situation",
+    "I love exploring and creating new technologies. I'm always trying to find something funny in any situation.",
   socialLinks: [
     {
       name: "linkedin",

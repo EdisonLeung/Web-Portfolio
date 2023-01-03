@@ -26,7 +26,7 @@ const App = () => {
 };
 const AppWrapper = () => {
   return (
-    <HashRouter basename="/web-portfolio">
+    <HashRouter basename="/">
       <App />
     </HashRouter>
   );
