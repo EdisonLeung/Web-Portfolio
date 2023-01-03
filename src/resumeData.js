@@ -154,7 +154,7 @@ let resumeData = {
         "JUnit Testing",
         "Java",
       ],
-      link: "/CampusMap",
+      link: "/web-portfolio/#/CampusMap",
       gitLink: "https://github.com/EdisonLeung/Campus-Map",
       thumbnail: "images/portfolio/CampusMap.jpg",
     },
