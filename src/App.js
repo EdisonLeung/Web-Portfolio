@@ -39,7 +39,7 @@ function Home() {
       <About resumeData={resumeData}/>
       <Resume resumeData={resumeData}/>
       <Portfolio resumeData={resumeData}/>
-      <ContactUs resumeData={resumeData}/>
+      {/* <ContactUs resumeData={resumeData}/> */}
       <Footer resumeData={resumeData}/>
     </div>
   );}
