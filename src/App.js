@@ -33,7 +33,7 @@ const AppWrapper = () => {
     //   </header>
     // </div>
     <Router basename="/">
-      <Home />
+      <App />
     </Router>
   );
 };
