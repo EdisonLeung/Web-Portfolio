@@ -23,7 +23,7 @@ export default class CampusMap extends Component {
       <div className="App">
         <Header />
         <section id="project-read">
-          <div style={{ height: "10vh"}} />
+          <div style={{ height: "10vh" }} />
           <div className="row">
             <h1>UW Campus Map (Project Overview)</h1>
             <h6>
@@ -32,7 +32,17 @@ export default class CampusMap extends Component {
               selecting from the dropdown menu or using the search bar at the
               top right of the map, users can select a start location and
               desitnation location. The program will then automatically generate
-              the shortest path between the two locations.
+              the shortest path between the two locations. Currently the project
+              is not avaliable on the web for demonstration as I do not have a
+              server to host the backend of the project. However, you can
+              checkout the project at the github repository{" "}
+              <a
+                href="https://github.com/EdisonLeung/Campus-Map"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                here
+              </a>
             </h6>
             <h1>Tools Used</h1>
             <ul className="skills">
@@ -116,7 +126,7 @@ function Map() {
   const [endPoint, setEndPoint] = useState({});
 
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
     initializeBuildingList(setBuildings);
   }, []);
 
@@ -224,24 +234,16 @@ const Header = () => {
           </a>
           <ul id="nav" className="nav">
             <li>
-              <a href="/#home">
-                Home
-              </a>
+              <a href="/#home">Home</a>
             </li>
             <li>
-              <a href="/#about">
-                About
-              </a>
+              <a href="/#about">About</a>
             </li>
             <li>
-              <a href="/#resume">
-                Resume
-              </a>
+              <a href="/#resume">Resume</a>
             </li>
             <li className="current">
-              <a href="/#portfolio">
-                Projects
-              </a>
+              <a href="/#portfolio">Projects</a>
             </li>
             {/* <li>
               <a href="/#contact">

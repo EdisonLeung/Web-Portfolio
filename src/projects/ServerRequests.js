@@ -82,7 +82,7 @@ export async function initializeBuildingList(setBuildings) {
       });
     }
   } catch (e) {
-    alert("Unable to retrieve buildings");
+    alert("Campus Map Project Unavaliable");
     console.log(e);
   }
   setBuildings(buildingMap);

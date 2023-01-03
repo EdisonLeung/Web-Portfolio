@@ -26,12 +26,6 @@ const App = () => {
 };
 const AppWrapper = () => {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src="/images/UW_Logo.png" className="App-logo" alt="logo" />
-    //     <h1>Hello from V2</h1>
-    //   </header>
-    // </div>
     <Router basename="/">
       <App />
     </Router>
