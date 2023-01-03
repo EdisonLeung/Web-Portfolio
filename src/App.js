@@ -26,9 +26,9 @@ const App = () => {
 };
 const AppWrapper = () => {
   return (
-    <Router basename="/">
-      <App />
-    </Router>
+    // <Router basename="/">
+      <Home />
+    // </Router>
   );
 };
 
