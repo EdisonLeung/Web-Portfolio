@@ -28,9 +28,11 @@ export const makeRequestRoute = async (start, end, setLines, setZoom, setCenter)
     console.log("No building selected");
   } else {
     try {
-      let responsePromise = fetch(
-        "https://spark-heroku-example.herokuapp.com/route?start=" + start + "&end=" + end
-      );
+      // let responsePromise = fetch(
+      //   "https://spark-heroku-example.herokuapp.com/route?start=" + start + "&end=" + end
+      // );
+      let responsePromise = fetch("http://localhost:4567/route?start=" + start + "&end=" + end);
+
       let response = await responsePromise;
 
       if (!response.ok) {
@@ -71,7 +73,9 @@ export const makeRequestRoute = async (start, end, setLines, setZoom, setCenter)
 export async function initializeBuildingList(setBuildings) {
   const buildingMap = [];
   try {
-    let responsePromise = fetch("https://spark-heroku-example.herokuapp.com/buildings");
+    let responsePromise = fetch("http://localhost:4567/buildings");
+    // let responsePromise = fetch("https://spark-heroku-example.herokuapp.com/buildings");
+
     let response = await responsePromise;
 
     let building = await response.json();
@@ -90,7 +94,8 @@ export async function initializeBuildingList(setBuildings) {
 
 export async function getBuildingLocation(name, setPoint) {
   try {
-    let responsePromise = fetch("https://spark-heroku-example.herokuapp.com/building_location?name=" + name)
+    let responsePromise = fetch("http://localhost:4567/building_location?name=" + name);
+    // let responsePromise = fetch("https://spark-heroku-example.herokuapp.com/building_location?name=" + name)
     let response = await responsePromise;
 
     let buildingLocation = await response.json();
