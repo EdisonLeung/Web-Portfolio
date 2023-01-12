@@ -32,9 +32,8 @@ export default class CampusMap extends Component {
               selecting from the dropdown menu or using the search bar at the
               top right of the map, users can select a start location and
               desitnation location. The program will then automatically generate
-              the shortest path between the two locations. Currently the project
-              is not avaliable on the web for demonstration as I do not have a
-              server to host the backend of the project. However, you can
+              the shortest path between the two locations. A demonstration of
+              the Campus Map can be seen below in the video. Feel free to
               checkout the project at the github repository{" "}
               <a
                 href="https://github.com/EdisonLeung/Campus-Map"
@@ -127,12 +126,15 @@ function Map() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    initializeBuildingList(setBuildings);
+    // initializeBuildingList(setBuildings);
   }, []);
 
   return (
-    <div id="map" className="row center-box">
-      <GoogleMap
+    <div id="map" className="row">
+      <video className="column" style={{ width: "100%" }} controls autoPlay muted>
+        <source src="videos/CampusMap_Video.mp4" type="video/mp4" />
+      </video>
+      {/* <GoogleMap
         zoom={zoom}
         center={center}
         mapContainerClassName="column"
@@ -171,8 +173,8 @@ function Map() {
             }}
           ></Marker>
         )}
-      </GoogleMap>
-      <div className="overlay-box">
+      </GoogleMap> */}
+      {/* <div className="overlay-box">
         <h4>Find Path Between Buildings</h4>
 
         <form role="search">
@@ -216,7 +218,7 @@ function Map() {
             required
           />
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }

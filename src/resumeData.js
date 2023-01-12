@@ -156,15 +156,27 @@ let resumeData = {
       ],
       link: "/CampusMap",
       gitLink: "https://github.com/EdisonLeung/Campus-Map",
-      thumbnail: "images/portfolio/CampusMap.jpg",
     },
     {
       name: "Imagetagger for Advanced Robotics at UW",
       description: "An Image Annotation Tool to effectively process over 30k+ images to feed into Machine Learning Model",
       imgurl: "images/portfolio/Imagetagger.jpg",
       skills: ["React", "Tailwind", "PostgreSQL", "Prisma", "Git"],
-      link: "https://github.com/",
+      link: "",
     },
+    {
+      name: "Robotics @ Cedar Park",
+      description: "Designed a robot’s functions per FIRST Robotics Competition’s (FRC) yearly performance and budget requirements, working closely with mentors from Boeing and Microsoft",
+      imgurl: "images/portfolio/CPR_Robot.jpg",
+      skills: [
+        "Java",
+        "SLAM Mapping",
+        "WPILIB",
+        "Git",
+        "Vision Tracking"
+      ],
+      link: ""
+    }
   ],
   noteworthy_projects: [
     {
