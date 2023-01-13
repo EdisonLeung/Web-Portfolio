@@ -142,8 +142,9 @@ let resumeData = {
   portfolio: [
     {
       name: "UW Campus Map",
-      description:
+      description: [
         "An application for finding the shortest path from one building to another at the University of Washington",
+      ],
       imgurl: "images/portfolio/CampusMap.jpg",
       skills: [
         "React",
@@ -156,34 +157,40 @@ let resumeData = {
       ],
       link: "/CampusMap",
       gitLink: "https://github.com/EdisonLeung/Campus-Map",
+      textLinks: [{ link: "/CampusMap", text: "View Project" }],
     },
     {
       name: "Imagetagger for Advanced Robotics at UW",
-      description: "An Image Annotation Tool to effectively process over 30k+ images to feed into Machine Learning Model",
+      description: [
+        "An Image Annotation Tool to effectively process over 30k+ images to feed into Machine Learning Model",
+      ],
       imgurl: "images/portfolio/Imagetagger.jpg",
       skills: ["React", "Tailwind", "PostgreSQL", "Prisma", "Git"],
       link: "",
+      textLinks: [],
     },
     {
       name: "Robotics @ Cedar Park",
-      description: "Designed a robot’s functions per FIRST Robotics Competition’s (FRC) yearly performance and budget requirements, working closely with mentors from Boeing and Microsoft",
-      imgurl: "images/portfolio/CPR_Robot.jpg",
-      skills: [
-        "Java",
-        "SLAM Mapping",
-        "WPILIB",
-        "Git",
-        "Vision Tracking"
+      description: [
+        "Designed a robot’s functions per FIRST Robotics Competition’s (FRC) yearly performance and budget requirements, working closely with mentors from Boeing and Microsoft",
+        "From 2020-2021 I was the software lead for the shooting division which was responsible for determining the ideal trajectory to hit a target given distance data.",
+        "Some of my other responsibilities included: Building a SLAM Map to enable robot to know location on field, Using SLAM Map to develop an algorithm to assist robot driver to properly align robot with targets, and Managing Electrical and Software compatability"
       ],
-      link: ""
-    }
+      imgurl: "images/portfolio/CPR_Robot.jpg",
+      skills: ["Java", "SLAM Mapping", "WPILIB", "Git", "Vision Tracking", "Cubic Interpolation", "Matlab", "Hardware Software Interface"],
+      link: "",
+      textLinks: [{ link: "https://www.cpr3663.com/", text: "Team Website" },
+      //  {link: "", text: "View Project"}
+      ],
+    },
   ],
   noteworthy_projects: [
     {
       name: "Dynamic Memory Allocator",
-      description: "Memory allocator that increases space utilization and decrease throughput using matrix transpose algorithms to optimize cache usage and reduce cache misses",
+      description:
+        "Memory allocator that increases space utilization and decrease throughput using matrix transpose algorithms to optimize cache usage and reduce cache misses",
       link: "https://github.com/EdisonLeung/Dynamic-Memory-Allocator",
-      skills: ["C", "blocking"],
+      skills: ["C", "blocking", "Memory Allocation in C"],
     },
   ],
 };

@@ -1382,7 +1382,30 @@ Project CSS
    color: #a8b2d1;
    font-size: 20px;
    line-height: 2.2rem;
+   text-align: left;
 }
+
+.projects-grid .project-description .read-more {
+  margin-bottom: -20px;
+  margin-top: -25px;
+  text-align: right;
+}
+
+.projects-grid .project-description button {
+  all: revert;
+  font-size: 17px;
+  border-width: 0px;
+  background-color:#112240;
+  color: #11abb0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.projects-grid .project-description button:hover{
+  cursor: pointer;
+  color:#3d4145;
+}
+
 
 .projects-grid:nth-of-type(2n+1) .project-tech-list {
    -webkit-box-pack: end;
@@ -1400,6 +1423,7 @@ Project CSS
 
 .projects-grid:nth-of-type(2n+1) .project-tech-list li {
    margin: 0px 0px 5px 20px;
+
 }
 
 .projects-grid .project-tech-list li {
@@ -1425,7 +1449,7 @@ Project CSS
    color: #ccd6f6;
 }
 
-.projects-grid .project-links Link, .projects-grid .project-links a{
+.projects-grid .project-links Link, .projects-grid .project-links a {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
