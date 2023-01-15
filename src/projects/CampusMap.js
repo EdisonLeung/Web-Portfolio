@@ -137,7 +137,7 @@ function Map() {
       <iframe 
       title="video"
       className="column" style={{ width: "100%" }}
-        src="https://www.youtube.com/embed/p1wxMJ_FdRQ?playlist=p1wxMJ_FdRQ&loop=1&autoplay=1&mute=1">
+        src="https://www.youtube.com/embed/mlTIXKklG_0?playlist=mlTIXKklG_0&loop=1&autoplay=1&mute=1">
       </iframe>
      
       {/* <GoogleMap
