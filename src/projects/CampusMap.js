@@ -131,9 +131,15 @@ function Map() {
 
   return (
     <div id="map" className="row">
-      <video className="column" style={{ width: "100%" }} controls autoPlay muted>
+      {/* <video className="column" style={{ width: "100%" }} controls autoPlay muted>
         <source src="videos/CampusMap_Video.mp4" type="video/mp4" />
-      </video>
+      </video> */}
+      <iframe 
+      title="video"
+      className="column" style={{ width: "100%" }}
+        src="https://www.youtube.com/embed/p1wxMJ_FdRQ?playlist=p1wxMJ_FdRQ&loop=1&autoplay=1&mute=1">
+      </iframe>
+     
       {/* <GoogleMap
         zoom={zoom}
         center={center}
