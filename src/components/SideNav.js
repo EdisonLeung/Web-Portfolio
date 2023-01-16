@@ -9,7 +9,7 @@ function SideNav(props) {
         {resumeData.socialLinks.map((item) => {
           return (
             <li key={item.name}>
-              <a href={item.url} target="_blank">
+              <a href={item.url} target="_blank" title={item.name}>
                 <i className={item.className}></i>
               </a>
             </li>
