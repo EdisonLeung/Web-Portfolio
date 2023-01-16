@@ -39,6 +39,8 @@ let resumeData = {
         "Systems and Software Tools",
         "Foundations of Computing",
         "Data Structures and Parallelism",
+        "Data Management",
+        "Systems Programming and Operating Systems",
         "Calculus Series and Linear Algebra",
       ],
       clubs:
@@ -143,7 +145,7 @@ let resumeData = {
     {
       name: "UW Campus Map",
       description: [
-        "An application for finding the shortest path from one building to another at the University of Washington",
+        "An application for finding the shortest path from one building to another at the University of Washington. This was part of a course project for CSE 331 (Software Design and Implementation) at the University of Washington",
       ],
       imgurl: "images/portfolio/CampusMap.jpg",
       skills: [
@@ -165,7 +167,7 @@ let resumeData = {
         "An Image Annotation Tool to effectively process over 30k+ images to feed into Machine Learning Model",
       ],
       imgurl: "images/portfolio/Imagetagger.jpg",
-      skills: ["React", "Tailwind", "PostgreSQL", "Prisma", "Git"],
+      skills: ["React", "Tailwind", "PostgreSQL", "Prisma", "Git",],
       link: "",
       textLinks: [],
     },
@@ -174,7 +176,9 @@ let resumeData = {
       description: [
         "Designed a robot’s functions per FIRST Robotics Competition’s (FRC) yearly performance and budget requirements, working closely with mentors from Boeing and Microsoft",
         "From 2020-2021 I was the software lead for the shooting division which was responsible for determining the ideal trajectory to hit a target given distance data.",
-        "Some of my other responsibilities included: Building a SLAM Map to enable robot to know location on field, Using SLAM Map to develop an algorithm to assist robot driver to properly align robot with targets, and Managing Electrical and Software compatability"
+        "In order to determine the ideal trajectory, we used a cubic spline interpolation algorithm. This would take a distance (given by a Limelight) and interpolate the from a dataset of ideal trajectory data points to find the best trajetory for that distance.",
+        "Some of my other responsibilities included: Programming essential motor functions, Building a SLAM Map to enable robot to know location on field, Using SLAM Map to develop an algorithm to assist robot driver to properly align robot with targets, and Managing Electrical and Software compatability",
+        "From 2018-2019 years on the team, my contributions helped team qualify for the FRC Worlds Competition in Houston where we became semi-finalists and finalists in 2018 and 2019 repsectively"
       ],
       imgurl: "images/portfolio/CPR_Robot.jpg",
       skills: ["Java", "SLAM Mapping", "WPILIB", "Git", "Vision Tracking", "Cubic Interpolation", "Matlab", "Hardware Software Interface"],
