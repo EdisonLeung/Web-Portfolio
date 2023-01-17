@@ -14,6 +14,7 @@ import {
   makeRequestRoute,
 } from "./ServerRequests";
 import Footer from "../components/Footer";
+import SideNav from "../components/SideNav"
 
 export default class CampusMap extends Component {
   render() {
@@ -21,6 +22,7 @@ export default class CampusMap extends Component {
 
     return (
       <div className="App">
+        <SideNav resumeData={resumeData}></SideNav>
         <Header />
         <section id="project-read">
           <div style={{ height: "10vh" }} />
