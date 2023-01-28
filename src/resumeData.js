@@ -172,6 +172,20 @@ let resumeData = {
       textLinks: [],
     },
     {
+      name: "Group Calendar Website",
+      description: ["Calendar schedule visualization tool to organize the schedules of multiple people or groups"],
+      imgurl: "images/portfolio/groupCalendar.jpg",
+      skills: [
+        "React",
+        "Tailwind",
+        "AWS Services (Console, S3, Amplify, Cognito, IAM)",
+        "Graphql"
+      ],
+      link:"",
+      gitLink: "https://github.com/EdisonLeung/group-calendar",
+      textLinks: []
+    },
+    {
       name: "Robotics @ Cedar Park",
       description: [
         "Designed a robot’s functions per FIRST Robotics Competition’s (FRC) yearly performance and budget requirements, working closely with mentors from Boeing and Microsoft",

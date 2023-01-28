@@ -45,7 +45,7 @@ function Porfolio(props) {
                         <div className="project-links">
                           {item.gitLink !== undefined && (
                             <a
-                              href="https://github.com/EdisonLeung/Campus-Map"
+                              href={item.gitLink}
                               target="_blank"
                               rel="noopener noreferrer"
                             >
