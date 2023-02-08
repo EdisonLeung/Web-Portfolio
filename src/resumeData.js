@@ -181,9 +181,9 @@ let resumeData = {
         "AWS Services (Console, S3, Amplify, Cognito, IAM)",
         "Graphql"
       ],
-      link:"",
+      link:"https://main.d3q58t64yxo8f4.amplifyapp.com/",
       gitLink: "https://github.com/EdisonLeung/group-calendar",
-      textLinks: []
+      textLinks: [{text: "View Project", link: "https://main.d3q58t64yxo8f4.amplifyapp.com/"}]
     },
     {
       name: "Robotics @ Cedar Park",
