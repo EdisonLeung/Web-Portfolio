@@ -1,103 +1,111 @@
-import React, { Component } from "react";
-export default class Resume extends Component {
-  render() {
-    let resumeData = this.props.resumeData;
-    return (
-      <section id="resume">
-        <div className="row skill">
-          <div className="three columns header-col">
-            <h1>
-              <span>Skills</span>
-            </h1>
-          </div>
-          <div className="nine columns main-col">
-            <p>{resumeData.skillsDescription}</p>
-            <ul className="skills">
-              {resumeData.skills &&
-                resumeData.skills.map((item) => {
-                  return <li> {item.skillname} </li>;
-                })}
-            </ul>
-          </div>
-        </div>
+import React, { useState } from "react";
+export default function Resume(props) {
+  let resumeData = props.resumeData;
+  const [selectedComp, setSelectedComp] = useState(resumeData.work[0]);
 
-        <div className="row education">
-          <div className="three columns header-col">
-            <h1>
-              <span>Education</span>
-            </h1>
-          </div>
-
-          <div className="nine columns main-col">
-            {resumeData.education &&
-              resumeData.education.map((item) => {
-                return (
-                  <div className="row item">
-                    <div className="twelve columns">
-                      <h3>{item.UniversityName}</h3>
-                      <p className="info">
-                        <em className="date">{item.date}</em>
-                      </p>
-                      <ul>
-                        {item.info.map((data) => {
-                          return <li>{data}</li>;
-                        })}
-                        <li>
-                          <b>Relevant Coursework:</b>
-                          <ul className="skills" style={{ marginTop: 0 }}>
-                            {item.courses.map((course) => {
-                              return (
-                                <li style={{ fontSize: 12 }}> {course} </li>
-                              );
-                            })}
-                          </ul>
-                        </li>
-                        <li>
-                          <b>Clubs and Organizations:</b> {item.clubs}
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                );
+  return (
+    <section id="resume">
+      <div className="row skill">
+        <h1>
+          <span>My Resume</span>
+        </h1>
+        <div className="resume-container">
+          <div className="title">Softwares / Skills</div>
+          <ul className="skills">
+            {resumeData.skills &&
+              resumeData.skills.map((item) => {
+                return <li> {item.skillname} </li>;
               })}
-          </div>
-        </div>
-        <div className="row work">
-          <div className="three columns header-col">
-            <h1>
-              <span>Work Experience</span>
-            </h1>
-          </div>
+          </ul>
+          <div className="title">Education</div>
+          {resumeData.education.map((item) => {
+            return (
+              <div className="description">
+              <div className="title">
+                {item.UniversityName}
+              </div>
 
-          <div className="nine columns main-col">
-            {resumeData.work &&
-              resumeData.work.map((item) => {
-                return (
-                  <div className="row item">
-                    <div className="twelve columns">
-                      <h3 className="eleven columns" style={{ padding: "0px" }}>
-                        {item.CompanyName}
-                        <h5 className="date">{item.date}</h5>
-                      </h3>
-                      <div className="one columns" style={{ padding: "0px" }}>
-                        <img src={item.logo} alt="" />
-                      </div>
+              <div>{item.date}</div>
 
-                      <ul
-                        className="twelve columns"
-                        style={{ marginTop: "0px" }}
+              <ul>
+                      {item.info.map((data) => {
+                        return <li>{data}</li>;
+                      })}
+                      <li>
+                        <b>Relevant Coursework:</b>
+                        <ul className="skills" style={{ marginTop: 0 }}>
+                          {item.courses.map((course) => {
+                            return <li style={{ fontSize: 12 }}> {course} </li>;
+                          })}
+                        </ul>
+                      </li>
+                      <li>
+                        <b>Clubs and Organizations:</b> {item.clubs}
+                      </li>
+                    </ul>
+            </div>
+            )
+          })}
+
+
+          <div className="title">Work Experience</div>
+          <div className="work-section">
+            <div className="select">
+              <ul>
+                {resumeData.work.map((item) => {
+                  return (
+                    <li
+                      className="smoothscroll"
+                      style={{
+                        borderLeft: `2px solid ${
+                          item.CompanyName === selectedComp.CompanyName
+                            ? "#64ffda"
+                            : ""
+                        }`,
+                      }}
+                    >
+                      <button
+                        key={item.CompanyName}
+                        onClick={() => setSelectedComp(item)}
                       >
-                        {item.Achievements.map((achievement) => {
-                          return <li> {achievement}</li>;
-                        })}
-                      </ul>
-                    </div>
-                  </div>
-                );
-              })}
+                        {item.CompanyName}
+                      </button>{" "}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className="description">
+              <div className="title">
+                {selectedComp.CompanyName}
+                <img
+                  src={selectedComp.logo}
+                  alt=""
+                  style={{
+                    position: "absolute",
+                    paddingRight: "4rem",
+                    right: 0,
+                    width: "auto",
+                    height: "5.5rem",
+                  }}
+                />
+              </div>
+
+              <div>{selectedComp.date}</div>
+
+              <ul>
+                {resumeData.work
+                  .filter(
+                    (item) => item.CompanyName === selectedComp.CompanyName
+                  )[0]
+                  .Achievements.map((achievement) => {
+                    return <li>{achievement}</li>;
+                  })}
+              </ul>
+            </div>
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 }

@@ -29,7 +29,9 @@ e. Others
 @import url("fonts.css");
 @import url("fontello/css/fontello.css");
 @import url("font-awesome/css/font-awesome.min.css");
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* ------------------------------------------------------------------
 /* b. Reset
       Adapted from:
@@ -447,8 +449,8 @@ p a:visited {
 
 ul,
 ol {
-  margin-bottom: 24px;
-  margin-top: 12px;
+  /* margin-bottom: 24px;
+  margin-top: 12px; */
 }
 ul {
   list-style: none outside;
@@ -646,7 +648,7 @@ img.pull-left {
 
 /*  6. Buttons  --------------------------------------------------------- */
 
-.button,
+/* .button,
 .button:visited,
 button,
 input[type="submit"],
@@ -710,7 +712,7 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
-}
+} */
 
 /*  7. Forms  --------------------------------------------------------- */
 
@@ -1670,4 +1672,91 @@ svg,
   height: 150px;
   margin: 0px auto;
   background-color: var(--light-slate);
+}
+
+.resume-container {
+  position: relative;
+  gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #0a192f;
+  padding: 10px;
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+.resume-container .title {
+  margin: 0px 0px 10px;
+  color: #ccd6f6;
+  font-family: "opensans-bold", sans-serif;
+  font-weight: normal;
+  font-size: clamp(16px, 5vw, 20px);
+}
+
+.resume-container .work-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.resume-container .select {
+  display: flex;
+  flex-direction: column;
+}
+.resume-container .work-section .select button {
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: var(--tab-height);
+  padding: 0px 20px 2px;
+  border-left: 2px solid var(--lightest-navy);
+  background-color: transparent;
+  color: var(--slate);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.resume-container .work-section .select ul li {
+  margin: 0
+}
+.resume-container .work-section .select li :hover{
+  cursor: pointer;
+  color: #64ffda;
+  scale: 1.01;
+  transition: all 0.15s ease-in-out;
+  background-color: #495670;
+  border-left: 2px solid #64ffda;
+
+}
+
+.resume-container .description {
+  padding-inline-start: 20px;
+
+}
+
+.resume-container .description .title {
+  color: #64ffda;
+  margin-bottom: 0;
+}
+
+.resume-container .description ul {
+  display: block;
+  list-style-type: circle;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 20px;
+}
+
+
+.bg-red {
+  background-color: #11abb0;
+}
+
+.bg-other {
+  background-color: #57bd84;
 }

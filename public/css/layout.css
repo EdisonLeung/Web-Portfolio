@@ -245,14 +245,15 @@ ul#nav li.current a { color: #F06000; }
 #resume a:hover, #resume a:focus { color: #313131; }
 
 #resume h1 {
-   font: 18px/24px 'opensans-bold', sans-serif;
+   font: 18px/24px 'opensans-semibold', sans-serif;
    text-transform: uppercase;
    letter-spacing: 1px;
-}
-#resume h1 span {
-   border-bottom: 3px solid #11ABB0;
+   text-align: left;
+   margin-bottom: 24px;
+   border-bottom: 3px solid rebeccapurple;
    padding-bottom: 6px;
 }
+
 #resume h3 {
    font: 25px/30px 'opensans-bold', sans-serif;
 }
@@ -286,20 +287,19 @@ ul#nav li.current a { color: #F06000; }
    margin-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;
 }
-.skills {
-  	margin-top: 36px;
-   list-style: none;
-}
+
 .skills li {
    display: inline-block;
-   background: rgb(18, 30, 39);
-   border-radius: 3px;
-   color: rgb(255, 255, 255);
-   padding: .75rem;
-   font-weight: 700;
    text-align: center;
-   margin-left: 1rem;
-   margin-bottom: 1.5rem;
+   margin: 0px 20px 5px 0px;
+   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+   font-size: 13px;
+   white-space: nowrap;
+
+   border-radius: .5rem;
+   padding: .2rem;
+   background-color: #E8E8E8;
+   color: black;
 }
 
 .work ul li::before {
@@ -403,7 +403,7 @@ ul#nav li.current a { color: #F06000; }
    text-transform: uppercase;
    letter-spacing: 1px;
    text-align: left;
-   margin-bottom: 48px;
+   margin-bottom: 24px;
    border-bottom: 3px solid #11ABB0;
    padding-bottom: 6px;
 }

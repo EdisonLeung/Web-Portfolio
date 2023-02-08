@@ -27,8 +27,8 @@ let resumeData = {
   number: "+1(206)681-7124",
   education: [
     {
-      UniversityName: "University of Washington",
-      date: "09/2021 - Current",
+      UniversityName: "B.S. of Computer Science @ University of Washington",
+      date: "Expected Graduation: 12/2024",
       info: [
         "Pursuing B.S. in Computer Science from Paul G. Allen Center for Computer Science and Engineering",
         "Major GPA: 3.87",
@@ -73,7 +73,7 @@ let resumeData = {
     },
     {
       CompanyName: "Coding Instructor / ID Tech",
-      date: "03/2021-09/2021, 06/2022-08/20220",
+      date: "03/2021-08/2022",
       logo: "images/IDTech.jpg",
       Achievements: [
         "Taught object-oriented design and how to apply it in Java and C#",
