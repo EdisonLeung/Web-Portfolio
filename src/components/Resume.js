@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.min.css";
+
 export default function Resume(props) {
   let resumeData = props.resumeData;
   const [selectedComp, setSelectedComp] = useState(resumeData.work[0]);
@@ -6,6 +9,11 @@ export default function Resume(props) {
   return (
     <section id="resume">
       <div className="row skill">
+        <ScrollAnimation
+          animateIn="animate__fadeInUp"
+          animateOnce={true}
+          duration={0.5}
+        >
         <h1>
           <span>My Resume</span>
         </h1>
@@ -21,32 +29,29 @@ export default function Resume(props) {
           {resumeData.education.map((item) => {
             return (
               <div className="description">
-              <div className="title">
-                {item.UniversityName}
-              </div>
+                <div className="title">{item.UniversityName}</div>
 
-              <div>{item.date}</div>
+                <div>{item.date}</div>
 
-              <ul>
-                      {item.info.map((data) => {
-                        return <li>{data}</li>;
+                <ul>
+                  {item.info.map((data) => {
+                    return <li>{data}</li>;
+                  })}
+                  <li>
+                    <b>Relevant Coursework:</b>
+                    <ul className="skills" style={{ marginTop: 0 }}>
+                      {item.courses.map((course) => {
+                        return <li style={{ fontSize: 12 }}> {course} </li>;
                       })}
-                      <li>
-                        <b>Relevant Coursework:</b>
-                        <ul className="skills" style={{ marginTop: 0 }}>
-                          {item.courses.map((course) => {
-                            return <li style={{ fontSize: 12 }}> {course} </li>;
-                          })}
-                        </ul>
-                      </li>
-                      <li>
-                        <b>Clubs and Organizations:</b> {item.clubs}
-                      </li>
                     </ul>
-            </div>
-            )
+                  </li>
+                  <li>
+                    <b>Clubs and Organizations:</b> {item.clubs}
+                  </li>
+                </ul>
+              </div>
+            );
           })}
-
 
           <div className="title">Work Experience</div>
           <div className="work-section">
@@ -105,6 +110,8 @@ export default function Resume(props) {
             </div>
           </div>
         </div>
+        </ScrollAnimation>{" "}
+
       </div>
     </section>
   );
