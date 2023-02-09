@@ -49,7 +49,7 @@ let resumeData = {
   ],
   work: [
     {
-      CompanyName: "CSE Course TA / University of Washington",
+      CompanyName: "CSE Course TA @ University of Washington",
       logo: "images/PaulAllenLogo.png",
       date: "09/2022 - Current",
       Achievements: [
@@ -59,7 +59,7 @@ let resumeData = {
       ],
     },
     {
-      CompanyName: "Solala / Software Engineer",
+      CompanyName: "Software Engineer @ Solala",
       date: "06/2022 - 09/2022",
       logo: "images/Solala.jpg",
       Achievements: [
@@ -72,7 +72,7 @@ let resumeData = {
       ],
     },
     {
-      CompanyName: "Coding Instructor / ID Tech",
+      CompanyName: "Coding Instructor @ ID Tech",
       date: "03/2021-08/2022",
       logo: "images/IDTech.jpg",
       Achievements: [
