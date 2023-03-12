@@ -1640,6 +1640,7 @@ svg,
 
 .sidenav {
   position: fixed;
+  overflow: hidden;
   z-index: 1;
   overflow-x: hidden;
   padding: 5px;
@@ -1711,7 +1712,7 @@ svg,
   width: 100%;
   height: var(--tab-height);
   padding: 0px 20px 2px;
-  border-left: 2px solid var(--lightest-navy);
+  border-left: 4px solid var(--lightest-navy);
   background-color: transparent;
   color: var(--slate);
   font-family: var(--font-mono);
@@ -1729,7 +1730,7 @@ svg,
   scale: 1.01;
   transition: all 0.15s ease-in-out;
   background-color: #495670;
-  border-left: 2px solid #64ffda;
+  border-left: 4px solid #64ffda;
 
 }
 
@@ -1751,7 +1752,6 @@ svg,
   margin-inline-end: 0px;
   padding-inline-start: 20px;
 }
-
 
 .bg-red {
   background-color: #11abb0;

@@ -1,11 +1,16 @@
 import React from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 
 function SideNav(props) {
   const resumeData = props.resumeData;
   return (
     <div
       className="sidenav">
-      <ul>
+        <ScrollAnimation
+          animateIn="animate__fadeInUp"
+          animateOnce={true}
+          duration={1}
+        >      <ul>
         {resumeData.socialLinks.map((item) => {
           return (
             <li key={item.name}>
@@ -16,6 +21,7 @@ function SideNav(props) {
           );
         })}
       </ul>
+      </ScrollAnimation>
     </div>
   );
 }

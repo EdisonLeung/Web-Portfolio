@@ -17,7 +17,6 @@ import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
 import resumeData from './resumeData';
 import SideNav from './components/SideNav';
-
 const App = () => {
   let routes = useRoutes([
     { path: "/", element: <Home/> },
@@ -27,9 +26,7 @@ const App = () => {
 };
 const AppWrapper = () => {
   return (
-    <Router basename="/">
-      <App />
-    </Router>
+    <CampusMap resumeData={resumeData}/>
   );
 };
 

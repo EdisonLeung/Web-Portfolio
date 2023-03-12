@@ -128,21 +128,18 @@ function Map() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // initializeBuildingList(setBuildings);
+    initializeBuildingList(setBuildings);
   }, []);
 
   return (
-    <div id="map" className="row">
-      {/* <video className="column" style={{ width: "100%" }} controls autoPlay muted>
-        <source src="videos/CampusMap_Video.mp4" type="video/mp4" />
-      </video> */}
-      <iframe 
+    <div id="map" className="row center-box">
+      {/* <iframe 
       title="video"
       className="column" style={{ width: "100%" }}
         src="https://www.youtube.com/embed/mlTIXKklG_0?playlist=mlTIXKklG_0&loop=1&autoplay=1&mute=1">
-      </iframe>
+      </iframe> */}
      
-      {/* <GoogleMap
+      <GoogleMap
         zoom={zoom}
         center={center}
         mapContainerClassName="column"
@@ -181,8 +178,8 @@ function Map() {
             }}
           ></Marker>
         )}
-      </GoogleMap> */}
-      {/* <div className="overlay-box">
+      </GoogleMap>
+      <div className="overlay-box">
         <h4>Find Path Between Buildings</h4>
 
         <form role="search">
@@ -226,7 +223,7 @@ function Map() {
             required
           />
         </form>
-      </div> */}
+      </div>
     </div>
   );
 }
@@ -244,22 +241,22 @@ const Header = () => {
           </a>
           <ul id="nav" className="nav">
             <li>
-              <a href="/#home">Home</a>
+              <a href="https://edisonleung.github.io/portfolio/">Home</a>
             </li>
             <li>
-              <a href="/#about">About</a>
+              <a href="https://edisonleung.github.io/portfolio/#about">About</a>
             </li>
             <li>
-              <a href="/#resume">Resume</a>
+              <a href="https://edisonleung.github.io/portfolio/#resume">Resume</a>
             </li>
             <li className="current">
-              <a href="/#portfolio">Projects</a>
+              <a href="https://edisonleung.github.io/portfolio/#portfolio">Projects</a>
             </li>
-            {/* <li>
-              <a href="/#contact">
+            <li>
+              <a href="https://edisonleung.github.io/portfolio/#contact">
                 Contact
               </a>
-            </li> */}
+            </li>
           </ul>
         </nav>
       </div>
